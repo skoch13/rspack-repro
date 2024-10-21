@@ -19,6 +19,16 @@ const config = {
     main: "./src/index",
   },
   plugins: [new HtmlWebpackPlugin()],
+  module: {
+    rules: [
+      {
+        loader: "builtin:swc-loader",
+        options: {
+          myFn: () => {},
+        },
+      },
+    ],
+  },
   output: {
     clean: true,
     path: isRunningWebpack
